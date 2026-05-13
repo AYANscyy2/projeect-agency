@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <div ref={scrollRefs.container} className="min-h-screen opacity-0 flex flex-col bg-surface">
-      <div ref={scrollRefs.navbar}><Navbar /></div>
+      <div ref={scrollRefs.navbar} className="fixed top-0 left-0 bg-white z-50 w-full"><Navbar /></div>
       <div ref={scrollRefs.hero} className="border-b-2"><Hero /></div>
       {/* <div ref={scrollRefs.stats}><Stats /></div> */}
       <div id="services" ref={scrollRefs.services}><Services /></div>
