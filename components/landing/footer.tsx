@@ -15,7 +15,7 @@ export function Footer() {
     if (!containerRef.current) return
 
     const elements = containerRef.current.querySelectorAll(".reveal-text")
-    
+
     elements.forEach((el) => {
       const split = new SplitText(el, {
         type: "lines,words",
@@ -47,7 +47,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="flex flex-col gap-5">
             <div className="font-anton text-[36px] md:text-[44px] uppercase leading-none text-on-primary reveal-text">
-              [AGENCY NAME]
+              AGENCY.dev
             </div>
             <p className="font-inter text-[15px] text-[#a3a3a3] leading-relaxed max-w-xs reveal-text">
               Building the digital engines that power industry leaders.
@@ -70,10 +70,10 @@ export function Footer() {
           {/* Navigation */}
           <div className="flex flex-col gap-4">
             <h4 className="font-inter text-[13px] uppercase tracking-[0.1em] font-bold text-[#a3a3a3] mb-1 reveal-text">Navigation</h4>
-            <a href="#" className="font-inter text-[14px] uppercase tracking-[0.06em] font-bold text-on-primary hover:underline underline-offset-4 reveal-text">Services</a>
-            <a href="#" className="font-inter text-[14px] uppercase tracking-[0.06em] font-bold text-on-primary hover:underline underline-offset-4 reveal-text">About</a>
-            <a href="#" className="font-inter text-[14px] uppercase tracking-[0.06em] font-bold text-on-primary hover:underline underline-offset-4 reveal-text">Work</a>
-            <a href="#" className="font-inter text-[14px] uppercase tracking-[0.06em] font-bold text-on-primary hover:underline underline-offset-4 reveal-text">Pricing</a>
+            <a href="#services" className="font-inter text-[14px] uppercase tracking-[0.06em] font-bold text-on-primary hover:underline underline-offset-4 reveal-text">Services</a>
+            <a href="#about" className="font-inter text-[14px] uppercase tracking-[0.06em] font-bold text-on-primary hover:underline underline-offset-4 reveal-text">About</a>
+            <a href="#services" className="font-inter text-[14px] uppercase tracking-[0.06em] font-bold text-on-primary hover:underline underline-offset-4 reveal-text">Work</a>
+            <a href="#pricing" className="font-inter text-[14px] uppercase tracking-[0.06em] font-bold text-on-primary hover:underline underline-offset-4 reveal-text">Pricing</a>
           </div>
 
           {/* Legal */}
@@ -98,7 +98,7 @@ export function Footer() {
       <div className="border-t border-[#333333]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6">
           <p className="font-inter text-[12px] uppercase tracking-[0.08em] text-[#777] text-center font-bold reveal-text">
-            © 2024 [AGENCY NAME]. NO COMPROMISE. ALL RIGHTS RESERVED.
+            © 2024  AGENCY.dev. NO COMPROMISE. ALL RIGHTS RESERVED.
           </p>
         </div>
       </div>

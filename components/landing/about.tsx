@@ -22,7 +22,7 @@ export function About() {
     if (!containerRef.current) return
 
     const elements = containerRef.current.querySelectorAll(".reveal-text")
-    
+
     elements.forEach((el) => {
       const split = new SplitText(el, {
         type: "lines,words",

@@ -6,6 +6,8 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
 
+import { Button } from "@/components/ui/button"
+
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const plans = [
@@ -13,7 +15,13 @@ const plans = [
     tier: "MVP",
     price: "$4.9K",
     unit: "/project",
-    features: ["Prototype Development", "Core Features Only", "4 Week Delivery"],
+    features: [
+      "Clickable UI/UX Prototype",
+      "Core Feature Development",
+      "Basic User Authentication",
+      "Mobile-Responsive Design",
+      "4-6 Week Delivery"
+    ],
     cta: "Start MVP",
     featured: false,
   },
@@ -21,28 +29,46 @@ const plans = [
     tier: "Growth",
     price: "$9.9K",
     unit: "/mo",
-    features: ["Full Product Design", "Scaling Infrastructure", "Priority Support"],
+    features: [
+      "Full-Stack Web Application",
+      "SEO & Performance Optimization",
+      "Custom Admin Dashboard",
+      "3rd-Party API Integrations",
+      "Ongoing Technical Support"
+    ],
     cta: "Join Growth",
     featured: true,
     badge: "Popular",
   },
   {
-    tier: "Scale",
-    price: "$19K",
-    unit: "/mo",
-    features: ["Dedicated Team", "Multi-Region Deploy", "Security Audits"],
-    cta: "Scale Up",
+    tier: "E-commerce Site",
+    price: "$12.5K",
+    unit: "/project",
+    features: [
+      "Shopify or Custom Storefront",
+      "Secure Payment Gateway Setup",
+      "Inventory Management System",
+      "Cart Abandonment Recovery",
+      "High-Converting Checkout Flow"
+    ],
+    cta: "Build My Store",
     featured: false,
   },
   {
-    tier: "Custom",
+    tier: "Enterprise Custom",
     price: "VAR",
     unit: "/quote",
-    features: ["Tailored Solutions", "Legacy Integration", "24/7 Concierge"],
+    features: [
+      "Tailored Microservices Architecture",
+      "Legacy System Migration",
+      "Advanced Security & Compliance",
+      "Dedicated Project Manager",
+      "24/7 Priority Concierge"
+    ],
     cta: "Talk Sales",
     featured: false,
   },
-]
+];
 
 export function Pricing() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -51,7 +77,7 @@ export function Pricing() {
     if (!containerRef.current) return
 
     const elements = containerRef.current.querySelectorAll(".reveal-text")
-    
+
     elements.forEach((el) => {
       const split = new SplitText(el, {
         type: "lines,words",
@@ -79,10 +105,15 @@ export function Pricing() {
     <section ref={containerRef} className="bg-primary text-on-primary w-full py-20 md:py-32 border-t-2 border-on-primary">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
 
+        {/* Section Label */}
+        <p className="font-inter text-[13px] uppercase tracking-[0.1em] text-[#a3a3a3] font-bold mb-3 text-center reveal-text">
+          Pricing & Plans
+        </p>
+
         {/* Header */}
         <div className="text-center mb-16 md:mb-20 flex flex-col items-center gap-4">
           <h2 className="font-anton text-[56px] md:text-[88px] uppercase leading-[0.9] text-on-primary reveal-text">
-            Choose Your Level.
+            Choose Your pricing.
           </h2>
           <p className="font-inter text-[18px] text-[#a3a3a3] max-w-md leading-relaxed reveal-text">
             Scalable pricing for teams at every stage of their journey.
@@ -90,7 +121,7 @@ export function Pricing() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 items-end">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 items-stretch">
           {plans.map((plan) => (
             <div key={plan.tier} className="relative flex flex-col">
 
@@ -100,24 +131,22 @@ export function Pricing() {
               )}
 
               <div
-                className={`relative z-10 flex flex-col border-2 p-7 h-full gap-6 ${
-                  plan.featured
-                    ? "bg-on-primary text-primary border-on-primary"
-                    : "bg-transparent text-on-primary border-[#3a3a3a]"
-                }`}
+                className={`relative z-10 flex flex-col border-2 p-7 h-full gap-6 ${plan.featured
+                  ? "bg-on-primary text-primary border-on-primary"
+                  : "bg-transparent text-on-primary border-[#3a3a3a]"
+                  }`}
               >
                 {/* Badge */}
                 {plan.badge && (
-                  <span className="font-inter text-[11px] uppercase tracking-[0.1em] font-bold bg-primary text-on-primary border border-on-primary px-3 py-1 w-fit reveal-text">
+                  <span className="font-inter text-[11px] uppercase tracking-[0.1em] font-bold bg-primary text-on-primary px-3 py-1 w-fit reveal-text">
                     {plan.badge}
                   </span>
                 )}
 
                 {/* Tier name */}
                 <p
-                  className={`font-inter text-[13px] uppercase tracking-[0.1em] font-bold reveal-text ${
-                    plan.featured ? "text-outline" : "text-[#a3a3a3]"
-                  }`}
+                  className={`font-inter text-[13px] uppercase tracking-[0.1em] font-bold reveal-text ${plan.featured ? "text-[#777]" : "text-[#a3a3a3]"
+                    }`}
                 >
                   {plan.tier}
                 </p>
@@ -126,16 +155,15 @@ export function Pricing() {
                 <div className="flex items-end gap-0.5 leading-none">
                   <span className="font-anton text-[52px] md:text-[60px] leading-none reveal-text">{plan.price}</span>
                   <span
-                    className={`font-inter text-[14px] uppercase font-bold tracking-widest mb-2 reveal-text ${
-                      plan.featured ? "text-outline" : "text-[#a3a3a3]"
-                    }`}
+                    className={`font-inter text-[14px] uppercase font-bold tracking-widest mb-2 reveal-text ${plan.featured ? "text-[#777]" : "text-[#a3a3a3]"
+                      }`}
                   >
                     {plan.unit}
                   </span>
                 </div>
 
                 {/* Divider */}
-                <hr className={`border-0 border-t ${plan.featured ? "border-[#d0d0d0]" : "border-[#3a3a3a]"}`} />
+                <hr className={`border-0 border-t ${plan.featured ? "border-primary/10" : "border-[#3a3a3a]"}`} />
 
                 {/* Features */}
                 <ul className="flex flex-col gap-3 flex-1">
@@ -151,9 +179,8 @@ export function Pricing() {
                         <path strokeLinecap="square" strokeLinejoin="miter" d="M5 13l4 4L19 7" />
                       </svg>
                       <span
-                        className={`font-inter text-[13px] uppercase tracking-[0.06em] font-bold reveal-text ${
-                          plan.featured ? "text-primary" : "text-[#d0d0d0]"
-                        }`}
+                        className={`font-inter text-[13px] uppercase tracking-[0.06em] font-bold reveal-text ${plan.featured ? "text-primary" : "text-[#d0d0d0]"
+                          }`}
                       >
                         {f}
                       </span>
@@ -162,15 +189,13 @@ export function Pricing() {
                 </ul>
 
                 {/* CTA */}
-                <button
-                  className={`mt-4 w-full py-4 font-inter text-[13px] uppercase tracking-widest font-bold border-2 transition-colors duration-200 ${
-                    plan.featured
-                      ? "bg-primary text-on-primary border-primary hover:bg-transparent hover:text-primary"
-                      : "bg-transparent text-on-primary border-[#5a5a5a] hover:border-on-primary hover:bg-on-primary hover:text-primary"
-                  }`}
+                <Button
+                  variant={plan.featured ? "primary" : "outline"}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="mt-4 w-full"
                 >
                   {plan.cta}
-                </button>
+                </Button>
               </div>
             </div>
           ))}
