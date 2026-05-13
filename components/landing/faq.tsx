@@ -63,7 +63,7 @@ export function FAQ() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
 
         {/* Heading */}
-        <h2 className="font-anton text-[56px] md:text-[80px] uppercase text-primary leading-[0.9] mb-12 md:mb-16 reveal-text">
+        <h2 className="font-anton text-[36px] sm:text-[56px] md:text-[80px] uppercase text-primary leading-[0.9] mb-12 md:mb-16 reveal-text">
           Common Questions.
         </h2>
 

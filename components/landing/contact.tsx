@@ -64,19 +64,19 @@ export function Contact() {
           Contact Us
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32">
 
           {/* Text Content */}
           <div className="flex flex-col gap-6">
-            <h2 className="font-anton text-[56px] md:text-[88px] uppercase leading-[0.9] text-on-primary reveal-text">
+            <h2 className="font-anton text-[36px] sm:text-[56px] md:text-[88px] uppercase leading-[0.9] text-on-primary reveal-text">
               LET&apos;S BUILD THE FUTURE.
             </h2>
-            <p className="font-inter text-[18px] text-[#a3a3a3] max-w-md leading-relaxed reveal-text">
+            <p className="font-inter text-[16px] sm:text-[18px] text-[#a3a3a3] max-w-md leading-relaxed reveal-text">
               Ready to scale? Drop us a line. We respond to every inquiry within 24 hours. No fluff, just results.
             </p>
             <div className="mt-4 flex flex-col gap-2 reveal-text">
-              <span className="font-inter text-[14px] uppercase font-bold tracking-widest text-[#777]">EMAIL US</span>
-              <a href="mailto:hello@agencyname.com" className="font-anton text-[24px] md:text-[32px] hover:underline text-on-primary">HELLO@AGENCY.COM</a>
+              <span className="font-inter text-[13px] sm:text-[14px] uppercase font-bold tracking-widest text-[#777]">EMAIL US</span>
+              <a href="mailto:hello@agencyname.com" className="font-anton text-[20px] sm:text-[24px] md:text-[32px] hover:underline text-on-primary">HELLO@AGENCY.COM</a>
             </div>
           </div>
 

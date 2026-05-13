@@ -111,27 +111,27 @@ export function Pricing() {
         </p>
 
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20 flex flex-col items-center gap-4">
-          <h2 className="font-anton text-[56px] md:text-[88px] uppercase leading-[0.9] text-on-primary reveal-text">
+        <div className="text-center mb-12 md:mb-20 flex flex-col items-center gap-4">
+          <h2 className="font-anton text-[36px] sm:text-[56px] md:text-[88px] uppercase leading-[0.9] text-on-primary reveal-text">
             Choose Your pricing.
           </h2>
-          <p className="font-inter text-[18px] text-[#a3a3a3] max-w-md leading-relaxed reveal-text">
+          <p className="font-inter text-[16px] sm:text-[18px] text-[#a3a3a3] max-w-md leading-relaxed reveal-text">
             Scalable pricing for teams at every stage of their journey.
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 lg:gap-5 items-stretch">
           {plans.map((plan) => (
             <div key={plan.tier} className="relative flex flex-col">
 
               {/* Featured offset shadow */}
               {plan.featured && (
-                <div className="absolute top-3 left-3 w-full h-full bg-on-primary z-0 pointer-events-none" />
+                <div className="absolute top-2 left-2 sm:top-3 sm:left-3 w-full h-full bg-on-primary z-0 pointer-events-none" />
               )}
 
               <div
-                className={`relative z-10 flex flex-col border-2 p-7 h-full gap-6 ${plan.featured
+                className={`relative z-10 flex flex-col border-2 p-6 sm:p-7 h-full gap-6 ${plan.featured
                   ? "bg-on-primary text-primary border-on-primary"
                   : "bg-transparent text-on-primary border-[#3a3a3a]"
                   }`}
@@ -153,9 +153,9 @@ export function Pricing() {
 
                 {/* Price */}
                 <div className="flex items-end gap-0.5 leading-none">
-                  <span className="font-anton text-[52px] md:text-[60px] leading-none reveal-text">{plan.price}</span>
+                  <span className="font-anton text-[40px] sm:text-[52px] md:text-[60px] leading-none reveal-text">{plan.price}</span>
                   <span
-                    className={`font-inter text-[14px] uppercase font-bold tracking-widest mb-2 reveal-text ${plan.featured ? "text-[#777]" : "text-[#a3a3a3]"
+                    className={`font-inter text-[13px] sm:text-[14px] uppercase font-bold tracking-widest mb-1 sm:mb-2 reveal-text ${plan.featured ? "text-[#777]" : "text-[#a3a3a3]"
                       }`}
                   >
                     {plan.unit}

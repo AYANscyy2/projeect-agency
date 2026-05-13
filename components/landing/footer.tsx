@@ -46,10 +46,10 @@ export function Footer() {
 
           {/* Brand Column */}
           <div className="flex flex-col gap-5">
-            <div className="font-anton text-[36px] md:text-[44px] uppercase leading-none text-on-primary reveal-text">
+            <div className="font-anton text-[32px] sm:text-[36px] md:text-[44px] uppercase leading-none text-on-primary reveal-text">
               AGENCY.dev
             </div>
-            <p className="font-inter text-[15px] text-[#a3a3a3] leading-relaxed max-w-xs reveal-text">
+            <p className="font-inter text-[14px] sm:text-[15px] text-[#a3a3a3] leading-relaxed max-w-xs reveal-text">
               Building the digital engines that power industry leaders.
             </p>
 
